@@ -1,5 +1,7 @@
 ActiveAdmin.register City do
 
+ permit_params :user_id, :temp_c, :temp_f, :weather, :city_name
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
