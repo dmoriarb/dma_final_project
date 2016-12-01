@@ -5,4 +5,6 @@ class City < ApplicationRecord
 
   # Validations
 
+  validates :city_name, :presence => true
+
 end
