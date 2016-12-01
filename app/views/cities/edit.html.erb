@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @city.errors.any? %>
+  <% @city.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit City #<%= @city.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_city/<%= @city.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @city.user_id %>">
+      </div>
+
+      <!-- Label and input for temp_c -->
+      <div class="form-group">
+        <label for="temp_c" class="control-label">
+          Temp c
+        </label>
+
+        <input type="text" id="temp_c" name="temp_c" placeholder="Temp c" class="form-control" value="<%= @city.temp_c %>">
+      </div>
+
+      <!-- Label and input for temp_f -->
+      <div class="form-group">
+        <label for="temp_f" class="control-label">
+          Temp f
+        </label>
+
+        <input type="text" id="temp_f" name="temp_f" placeholder="Temp f" class="form-control" value="<%= @city.temp_f %>">
+      </div>
+
+      <!-- Label and input for weather -->
+      <div class="form-group">
+        <label for="weather" class="control-label">
+          Weather
+        </label>
+
+        <input type="text" id="weather" name="weather" placeholder="Weather" class="form-control" value="<%= @city.weather %>">
+      </div>
+
+      <!-- Label and input for city_name -->
+      <div class="form-group">
+        <label for="city_name" class="control-label">
+          City name
+        </label>
+
+        <input type="text" id="city_name" name="city_name" placeholder="City name" class="form-control" value="<%= @city.city_name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update City
+      </button>
+      or
+      <a href="/cities/<%= @city.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
