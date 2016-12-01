@@ -19,7 +19,7 @@
 
       <% @cities.each do |city| %>
       <tr>
-        <td><%= city.user_id %></td>
+        <td><%= city.user.email %></td>
         <td><%= city.temp_c %></td>
         <td><%= city.temp_f %></td>
         <td><%= city.weather %></td>
