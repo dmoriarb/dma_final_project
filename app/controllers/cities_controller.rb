@@ -1,5 +1,5 @@
 class CitiesController < ApplicationController
-  before_action :current_user_must_be_city_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_city_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_city_user
     city = City.find(params[:id])
