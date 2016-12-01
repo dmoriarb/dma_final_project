@@ -1,4 +1,14 @@
 class CitiesController < ApplicationController
+  before_action :current_user_must_be_city_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_city_user
+    city = City.find(params[:id])
+
+    unless current_user == city.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @cities = City.all
 

@@ -26,8 +26,11 @@
         <td><%= city.city_name %></td>
         <td>
           <a href="/cities/<%= city.id %>" class="btn btn-primary">Show</a>
-          <a href="/cities/<%= city.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_city/<%= city.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == city.user %>
+            <a href="/cities/<%= city.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_city/<%= city.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

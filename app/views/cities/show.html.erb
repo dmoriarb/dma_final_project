@@ -26,12 +26,14 @@
       <a href="/cities" class="btn btn-primary">
         Back
       </a>
-      <a href="/cities/<%= @city.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_city/<%= @city.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @city.user %>
+        <a href="/cities/<%= @city.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_city/<%= @city.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
