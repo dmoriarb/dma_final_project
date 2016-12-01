@@ -10,7 +10,8 @@ class CitiesController < ApplicationController
   end
 
   def index
-    @cities = current_user.cities.page(params[:page]).per(10)
+    @q = current_user.cities.ransack(params[:q])
+      @cities = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("cities/index.html.erb")
   end
