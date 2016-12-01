@@ -1,0 +1,1 @@
+{"name":"DMA_final_project","repository":"https://github.com/dmoriarb/dma_final_project","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
