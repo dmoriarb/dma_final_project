@@ -19,7 +19,13 @@
 
       <% @cities.each do |city| %>
       <tr>
-        <td><%= city.user.email %></td>
+        <td>
+          <% if city.user.present? %>
+            <a href="/users/<%= city.user.id %>">
+              <%= city.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= city.temp_c %></td>
         <td><%= city.temp_f %></td>
         <td><%= city.weather %></td>
