@@ -13,6 +13,7 @@ class CitiesController < ApplicationController
     @q = current_user.cities.ransack(params[:q])
       @cities = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
+
     render("cities/index.html.erb")
   end
 
@@ -24,7 +25,6 @@ class CitiesController < ApplicationController
 
   def new
     @city = City.new
-
     render("cities/new.html.erb")
   end
 

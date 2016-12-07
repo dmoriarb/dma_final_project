@@ -22,31 +22,15 @@
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
       <!-- Label and input for temp_c -->
-      <div class="form-group">
-        <label for="temp_c" class="control-label">
-          Temp c
-        </label>
+      <input type="hidden" id="temp_c" name="temp_c" placeholder="Temp c" class="form-control" value="<%= @city.temp_c %>">
 
-        <input type="text" id="temp_c" name="temp_c" placeholder="Temp c" class="form-control" value="<%= @city.temp_c %>">
-      </div>
 
       <!-- Label and input for temp_f -->
-      <div class="form-group">
-        <label for="temp_f" class="control-label">
-          Temp f
-        </label>
+        <input type="hidden" id="temp_f" name="temp_f" placeholder="Temp f" class="form-control" value="<%= @city.temp_f %>">
 
-        <input type="text" id="temp_f" name="temp_f" placeholder="Temp f" class="form-control" value="<%= @city.temp_f %>">
-      </div>
 
       <!-- Label and input for weather -->
-      <div class="form-group">
-        <label for="weather" class="control-label">
-          Weather
-        </label>
-
-        <input type="text" id="weather" name="weather" placeholder="Weather" class="form-control" value="<%= @city.weather %>">
-      </div>
+        <input type="hidden" id="weather" name="weather" placeholder="Weather" class="form-control" value="<%= @city.weather %>">
 
       <!-- Label and input for city_name -->
       <div class="form-group">
@@ -58,7 +42,7 @@
       </div>
 
       <button class="btn btn-success">
-        Create City
+        Add to your cities
       </button>
       or
       <a href="/cities">Cancel</a>

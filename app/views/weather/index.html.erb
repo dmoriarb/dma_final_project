@@ -1,0 +1,13 @@
+<h1> hola <h1>
+
+  <% @cities.each do |city| %>
+  <% url = "http://maps.googleapis.com/maps/api/geocode/json?address="+city.city_name %>
+  <%  parsed_data = JSON.parse(open(url).read) %>
+  <%  lat = parsed_data["results"][0]["geometry"]["location"]["lat"]%>
+  <%  lng = parsed_data["results"][0]["geometry"]["location"]["lng"]%>
+  <%  coord= [lat,lng].to_sentence(two_words_connector: ',') %>
+  <%  url2 = "https://api.darksky.net/forecast/edf7ebf38240e9a09c2f3abcbdb81c52/"+coord%>
+  <%  parsed_dati = JSON.parse(open(url2).read)%>
+<% @current_temperature = parsed_dati["currently"]["temperature"] %>
+<%= @current_temperature %>
+  <% end %>

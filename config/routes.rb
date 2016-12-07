@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_city/:id", :controller => "cities", :action => "destroy"
+
+  get "/weather" , :controller => "weather", :action => "index"
   #------------------------------
 
   devise_for :users
